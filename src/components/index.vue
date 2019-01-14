@@ -35,7 +35,9 @@
             </el-submenu>
           </el-menu>
         </el-aside>
-        <el-main>Main</el-main>
+        <el-main>
+            <router-view></router-view>
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -54,6 +56,7 @@ export default {
   //      this.$router.push('login')
   // }
   // },
+
   data() {
     return {
       mainList: []
@@ -62,7 +65,7 @@ export default {
   created() {
     this.$axios.get("menus").then(
       res => {
-        console.log(res);
+        // console.log(res);
         this.mainList = res.data.data;
       },
       err => {}

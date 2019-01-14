@@ -13,6 +13,10 @@ import VueAxios from './lib/vue.axios';
 Vue.use(VueAxios);
 // 导入rotuer插件
 import router from "./lib/rotuer"
+// 导入面包屑
+import myBreadcrumb from "./components/breadcrumb.vue"
+Vue.component('myBreadcrumb',myBreadcrumb)
+
 
 new Vue({
   render: h => h(App),

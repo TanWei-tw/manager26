@@ -3,13 +3,20 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 import index from "../components/index.vue"
 import login from "../components/login.vue"
+import user from "../components/users.vue"
 let routes=[
     {
         path:'/login',
         component:login
     },{
         path:'/',
-        component:index
+        component:index,
+        children:[
+            {
+                path:'/users',
+                component:user
+            }
+        ]
     }
 ]
 let router = new VueRouter({
@@ -28,7 +35,7 @@ let router = new VueRouter({
             //   message: '要先登陆哦',
             //   type: 'warning'
             // });
-            // Vue.prototype.$message.error('要先登陆哦')
+            Vue.prototype.$message.error('要先登陆哦')
              next('/login')
         }
     }
